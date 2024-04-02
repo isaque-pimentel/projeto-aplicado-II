@@ -26,18 +26,18 @@ As metas do projeto são as ações a serem realizadas pelo modelo. Após o dese
 - Treinar a segurança do condomínio no uso do novo sistema.
 
 ### Dependências
-TDB 
 
-* seaborn: gráficos com python
-* matplotlib: gráficos com python
-* pandas: criação e manipulação de dataframes
-* yfinance: busca de dados sobre as ações
+* OpenCv: biblioteca de processamento de imagem, usada no pré-processamento de imagens, detecção de contorno e segmentação.
+* TensorFlow: framework de aprendizado de máquina e deep learning usado no treinamento de modelo de reconhecimento de imagens.
+* PyTesseract: interface para biblioteca OCR Tesseract, útil para reconhecer os caracteres das placas.
+* Matplotlib e Seaborn: bibliotecas de visualização de dados e análise de resultados.
+* Numpy e Pandas: bibliotecas de manipulação e análise de dados padrão em Python.
 
 
 ### Apresentação do Projeto
 
 A apresentação do projeto foi disponibilizada no YouTube. Clique nesse link para acessar o vídeo.
 
-### Relatório
+### Relatório do Projeto
 
 Ao final do projeto, um relatório foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação da organização, proposta analítica, análise exploratória de dado e os resultados pretendidos. Clique nesse link para acessar a versão final do relatório.
