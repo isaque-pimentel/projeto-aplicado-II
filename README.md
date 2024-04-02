@@ -17,7 +17,8 @@ Somos alunos de Ciências de Dados trabalhando em um projeto de Aprendizado de M
 Nosso objetivo no Projeto Aplicado II de Ciência de Dados é desenvolver um modelo altamente preciso para reconhecimento de placas veiculares. Para alcançar isso, o modelo precisa realizar as seguintes tarefas:
 
 1. Detectar placas veiculares em imagens de carros.
-2. Aplicar processamento de imagem e OCR para extrair os caracteres da placa.
+2. Aplicar processamento de imagem para segmentar a placa.
+3. Aplicar OCR para extrair os caracteres da placa.
 
 As metas do projeto são as ações a serem realizadas pelo modelo. Após o desenvolvimento do modelo, as próximas etapas na implementação efetiva do sistema são:
 
