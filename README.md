@@ -41,4 +41,4 @@ A apresentação do projeto foi disponibilizada no YouTube. Clique nesse link pa
 
 ### Relatório do Projeto
 
-Ao final do projeto, um relatório foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação da organização, proposta analítica, análise exploratória de dado e os resultados pretendidos. Clique nesse link para acessar a versão final do relatório.
+Ao final do projeto, um relatório foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação da organização, proposta analítica, análise exploratória de dados e os resultados pretendidos. Clique nesse link para acessar a versão final do relatório.
