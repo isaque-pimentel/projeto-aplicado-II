@@ -27,11 +27,11 @@ As metas do projeto são as ações a serem realizadas pelo modelo. Após o dese
 
 ### Dependências
 
-* OpenCv: biblioteca de processamento de imagem, usada no pré-processamento de imagens, detecção de contorno e segmentação.
-* TensorFlow: framework de aprendizado de máquina e deep learning usado no treinamento de modelo de reconhecimento de imagens.
-* PyTesseract: interface para biblioteca OCR Tesseract, útil para reconhecer os caracteres das placas.
-* Matplotlib e Seaborn: bibliotecas de visualização de dados e análise de resultados.
-* Numpy e Pandas: bibliotecas de manipulação e análise de dados padrão em Python.
+* [OpenCV](https://opencv.org/): biblioteca de processamento de imagem, usada no pré-processamento de imagens, detecção de contorno e segmentação.
+* [TensorFlow](https://www.tensorflow.org/): framework de aprendizado de máquina e deep learning usado no treinamento de modelo de reconhecimento de imagens.
+* [PyTesseract](https://pypi.org/project/pytesseract/): interface para biblioteca OCR Tesseract, útil para reconhecer os caracteres das placas.
+* [Matplotlib](https://matplotlib.org/) e [Seaborn](https://seaborn.pydata.org/): bibliotecas de visualização de dados e análise de resultados.
+* [NumPy](https://numpy.org/) e [Pandas](https://pandas.pydata.org/): bibliotecas de manipulação e análise de dados padrão em Python.
 
 
 ### Apresentação do Projeto
