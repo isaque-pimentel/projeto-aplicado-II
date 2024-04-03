@@ -22,7 +22,8 @@ print(df.head())
 
 # Choose the image here
 image_idx = 10
-file_path = df["image_path"].iloc[image_idx]
+image_df = df.iloc[image_idx]
+file_path = image_df["image_path"]
 
 # Read the image
 img = io.imread(file_path)
@@ -34,9 +35,14 @@ fig.update_layout(
     xaxis_title="Figure 8 - N2.jpeg with bounding box",
 )
 
-fig.show()
+xmin = image_df["xmin"]
+xmax = image_df["xmax"]
+ymin = image_df["ymin"]
+ymax = image_df["ymax"]
 
-# # Add the label
-# fig.add_shape(
-#     type="rect", xref="x", line_color="red", x0=xmin, x1=xmax, y0=ymin, y1=ymax
-# )
+# Add the label
+fig.add_shape(
+    type="rect", xref="x", line_color="red", x0=xmin, x1=xmax, y0=ymin, y1=ymax
+)
+
+fig.show()
