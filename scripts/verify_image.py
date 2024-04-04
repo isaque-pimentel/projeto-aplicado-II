@@ -21,7 +21,7 @@ df = pd.read_csv(csv_filename)
 print(df.head())
 
 # Choose the image here
-image_idx = 10
+image_idx = 60
 image_df = df.iloc[image_idx]
 file_path = image_df["image_path"]
 
