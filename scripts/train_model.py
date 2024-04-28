@@ -57,17 +57,18 @@ model.compile(loss="mse", optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4)
 model.summary()
 
 # Train model
-tfb = TensorBoard("object_detection")
+board_name = "object_detection"
+tfb = TensorBoard(board_name)
 history = model.fit(
     x=X_train,
     y=y_train,
-    batch_size=64,
-    epochs=4,
+    batch_size=16,
+    epochs=8,
     validation_data=(X_test, y_test),
     callbacks=[tfb],
 )
 
 # Save model
-model_filename = os.path.join(output_dir, "object_detection.h5")
+model_filename = os.path.join(output_dir, ".".join(board_name, "keras")
 print(f"Saving model into from {model_filename}")
 model.save(model_filename)
