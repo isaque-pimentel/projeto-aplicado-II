@@ -58,23 +58,29 @@ def detect_plate(path, verbose=False):
     pt2 = (xmax, ymax)
     print(pt1, pt2)
     # Show test image with box
-    cv2.rectangle(image, pt1, pt2, (0, 255, 0), 3)
+    color = 255,255,0 
+    cv2.rectangle(image, pt1, pt2, color, 2)
     return image, coords
+
 
 # Load test image
 test_dir = os.path.join(input_dir, "TEST")
-test_path = os.path.join(test_dir, "TEST.jpeg")
-image, coords = detect_plate(test_path)
-fig = px.imshow(image)
-fig.update_layout(width=700, height=500, margin=dict(l=10, r=10, b=10, t=10))
-fig.show()
 
+filenames = ["TEST_1", "TEST_2", "TEST_3", "TEST_4"]
 
-# Save test plate
-img_arr = np.array(load_img(test_path))
-xmin, xmax, ymin, ymax = coords[0]
-plate_arr = img_arr[ymin:ymax, xmin:xmax]
-im = Image.fromarray(plate_arr)
-
-test_plate_path = os.path.join(test_dir, "TEST_PLATE.jpeg")
-im.save(test_plate_path)
+for filename in filenames:
+    # Set test path
+    test_path = os.path.join(test_dir, ".".join((filename, "jpeg")))
+    image, coords = detect_plate(test_path)
+    fig = px.imshow(image)
+    fig.update_layout(width=700, height=500, margin=dict(l=10, r=10, b=10, t=10))
+    fig.show()
+    # Crop test plate
+    img_arr = np.array(load_img(test_path))
+    xmin, xmax, ymin, ymax = coords[0]
+    plate_arr = img_arr[ymin:ymax, xmin:xmax]
+    im = Image.fromarray(plate_arr)
+    # Save test plate
+    filename_plate = f"{filename}_PLATE"
+    test_plate_path = os.path.join(test_dir, ".".join((filename_plate, "jpeg")))
+    im.save(test_plate_path)
