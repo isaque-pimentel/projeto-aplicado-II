@@ -1,4 +1,4 @@
-# Projeto Aplicado II - Read Data
+# Projeto Aplicado II - Deep Learning Model Training
 
 import pandas as pd
 import numpy as np
@@ -61,13 +61,13 @@ tfb = TensorBoard("object_detection")
 history = model.fit(
     x=X_train,
     y=y_train,
-    batch_size=10,
-    epochs=128,
+    batch_size=64,
+    epochs=4,
     validation_data=(X_test, y_test),
     callbacks=[tfb],
 )
 
 # Save model
-model_filename = os.path.join(output_dir, "/object_detection.h5")
+model_filename = os.path.join(output_dir, "object_detection.h5")
 print(f"Saving model into from {model_filename}")
 model.save(model_filename)
