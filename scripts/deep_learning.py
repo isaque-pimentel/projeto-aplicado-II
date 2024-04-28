@@ -54,7 +54,7 @@ model = Model(inputs=inception_resnet.input, outputs=headmodel)
 
 # Compile model
 model.compile(loss="mse", optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4))
-model.sumary()
+model.summary()
 
 # Train model
 tfb = TensorBoard("object_detection")
@@ -68,3 +68,6 @@ history = model.fit(
 )
 
 # Save model
+model_filename = os.path.join(output_dir, "/object_detection.h5")
+print(f"Saving model into from {model_filename}")
+model.save(model_filename)
