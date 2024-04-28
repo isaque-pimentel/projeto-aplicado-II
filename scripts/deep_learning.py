@@ -56,4 +56,15 @@ model = Model(inputs=inception_resnet.input, outputs=headmodel)
 model.compile(loss="mse", optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4))
 model.sumary()
 
-# Training model and Save
+# Train model
+tfb = TensorBoard("object_detection")
+history = model.fit(
+    x=X_train,
+    y=y_train,
+    batch_size=10,
+    epochs=128,
+    validation_data=(X_test, y_test),
+    callbacks=[tfb],
+)
+
+# Save model
