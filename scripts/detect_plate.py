@@ -1,4 +1,4 @@
-# Projeto Aplicado II - Detect Object
+# Projeto Aplicado II - Detect Plate
 
 import pandas as pd
 import numpy as np
