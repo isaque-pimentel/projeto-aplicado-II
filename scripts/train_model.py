@@ -1,4 +1,4 @@
-# Projeto Aplicado II - Deep Learning Model Training
+# Projeto Aplicado II - Train Deep Learning Model
 
 import pandas as pd
 import numpy as np
