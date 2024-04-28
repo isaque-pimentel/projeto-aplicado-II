@@ -27,44 +27,41 @@ print(f"Load model from {model_filename}")
 model2 = tf.keras.models.load_model(model_filename)
 print("Model loaded successfully")
 
+
+# Create pipeline
+def detect_plate(path, verbose=False):
+    # Read image
+    image = load_img(path) # PIL Object
+    image = np.array(image, dtype=np.uint8)
+    h, w, d = image.shape
+    if verbose:
+        print(f"Altura da imagem = {h}")
+        print(f"Largura da imagem = {w}")
+    # Data preprocessing
+    load_image = load_img(test_path, target_size=(224, 224))
+    load_image_arr = img_to_array(load_image) / 255.0
+    test_arr = load_image_arr.reshape(1,224,224,3)
+    if verbose:
+        print(f"Tamanho da imagem = {load_image_arr.shape}")
+        print(f"Tamanho da imagem TEST (Input) = {test_arr.shape}")
+    # Make prediction
+    coords = model.predict(test_arr)
+    # Denormalize
+    denorm = np.array([w,w,h,h])
+    coords = coords * denorm
+    coords = coords.astype(np.int32)
+    # Draw bounding on top the image
+    xmin, xmax,ymin,ymax = coords[0]
+    pt1 =(xmin,ymin)
+    pt2 =(xmax,ymax)
+    print(pt1, pt2)
+    # Show test image with box
+    cv2.rectangle(image,pt1,pt2,(0,255,0),3)
+    return image, coords
+
 # Load test image
 test_path = os.path.join(input_dir, "TEST", "TEST.jpeg")
-image = load_img(test_path)
-image = np.array(image, dtype=np.uint8)
-h, w, d = image.shape
-
-print(f"Altura da imagem TEST = {h}")
-print(f"Largura da imagem TEST = {w}")
-
-# Show test image
-fig = px.imshow(image)
-fig.update_layout(width=700, height=500,  margin=dict(l=10, r=10, b=10, t=10))
-fig.show()
-
-# Load and normalize
-load_image = load_img(test_path, target_size=(224, 224))
-load_image_arr = img_to_array(load_image) / 255.0
-print(f"Tamanho da imagem TEST = {load_image_arr.shape}")
-
-test_arr = load_image_arr.reshape(1,224,224,3)
-print(f"Tamanho da imagem TEST (Input) = {test_arr.shape}")
-
-# Make prediction
-coords = model.predict(test_arr)
-denorm = np.array([w,w,h,h])
-coords = coords * denorm
-
-# Creating box
-coords = coords.astype(np.int32)
-
-# Draw bounding on top the image
-xmin, xmax,ymin,ymax = coords[0]
-pt1 =(xmin,ymin)
-pt2 =(xmax,ymax)
-print(pt1, pt2)
-
-# Show test image with box
-cv2.rectangle(image,pt1,pt2,(0,255,0),3)
+image, coords = detect_plate(test_path)
 fig = px.imshow(image)
 fig.update_layout(width=700, height=500, margin=dict(l=10, r=10, b=10, t=10))
 fig.show()
