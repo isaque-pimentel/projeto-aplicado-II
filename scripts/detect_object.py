@@ -23,3 +23,6 @@ model_filename = os.path.join(output_dir, ".".join((board_name, "keras")))
 print(f"Load model from {model_filename}")
 model2 = tf.keras.models.load_model(model_filename)
 print("Model loaded successfully")
+
+test_path = os.path.join(input_dir, "TEST", "TEST.jpeg")
+image = load_img(test_path)
