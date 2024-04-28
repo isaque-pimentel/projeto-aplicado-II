@@ -69,6 +69,6 @@ history = model.fit(
 )
 
 # Save model
-model_filename = os.path.join(output_dir, ".".join(board_name, "keras")
+model_filename = os.path.join(output_dir, ".".join((board_name, "keras")))
 print(f"Saving model into from {model_filename}")
 model.save(model_filename)
