@@ -8,6 +8,7 @@ import plotly.express as px
 import cv2
 import pytesseract as pt
 
+from PIL import Image
 from shutil import copy
 from tensorflow.keras.models import Model
 from tensorflow.keras.callbacks import TensorBoard
@@ -25,7 +26,7 @@ output_dir = "output"
 board_name = "object_detection"
 model_filename = os.path.join(output_dir, ".".join((board_name, "keras")))
 print(f"Load model from {model_filename}")
-model2 = tf.keras.models.load_model(model_filename)
+model = tf.keras.models.load_model(model_filename)
 print("Model loaded successfully")
 
 
@@ -60,22 +61,20 @@ def detect_plate(path, verbose=False):
     cv2.rectangle(image, pt1, pt2, (0, 255, 0), 3)
     return image, coords
 
-
 # Load test image
-test_path = os.path.join(input_dir, "TEST", "TEST.jpeg")
+test_dir = os.path.join(input_dir, "TEST")
+test_path = os.path.join(test_dir, "TEST.jpeg")
 image, coords = detect_plate(test_path)
 fig = px.imshow(image)
 fig.update_layout(width=700, height=500, margin=dict(l=10, r=10, b=10, t=10))
 fig.show()
 
-# Save test plate
-img = np.array(load_img(test_path))
-xmin, xmax, ymin, ymax = coords[0]
-plate = img[ymin:ymax, xmin:xmax]
-fig = px.imshow(plate)
-fig.update_layout(width=700, height=500, margin=dict(l=10, r=10, b=10, t=10))
-fig.show()
 
-# OCR using Tesseract
-plate_text = pt.image_to_string(plate)
-print(plate_text)
+# Save test plate
+img_arr = np.array(load_img(test_path))
+xmin, xmax, ymin, ymax = coords[0]
+plate_arr = img_arr[ymin:ymax, xmin:xmax]
+im = Image.fromarray(plate_arr)
+
+test_plate_path = os.path.join(test_dir, "TEST_PLATE.jpeg")
+im.save(test_plate_path)
