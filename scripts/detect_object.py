@@ -18,6 +18,8 @@ input_dir = "dataset"
 output_dir = "output"
 
 # Load model
-model_filename = os.path.join(output_dir, "object_detection.keras")
+board_name = "object_detection"
+model_filename = os.path.join(output_dir, ".".join((board_name, "keras")))
 print(f"Load model from {model_filename}")
-model = tf.keras.models.load_model(model_filename)
+model2 = tf.keras.models.load_model(model_filename)
+print("Model loaded successfully")
