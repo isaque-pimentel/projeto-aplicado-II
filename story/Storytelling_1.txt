@@ -1,0 +1,17 @@
+História do Sentinela: Uma Jornada de Reconhecimento de Placas Veiculares
+
+Houve um momento em que um grupo de alunos de Ciências de Dados, munidos de curiosidade e paixão pela tecnologia, se lançou em uma missão desafiadora: criar uma solução inovadora para um problema real com aplicação comercial. Assim nasceu o Sentinela, um sistema de detecção e conversão de placas veiculares a partir de fotos da dianteira de veículos.
+
+A jornada começou com a criação do Sentinela, um projeto de aprendizado de máquina destinado a revolucionar a forma como identificamos veículos. Com o anúncio do nosso projeto, fomos abordados por uma administradora de condomínios, que via no Sentinela a solução ideal para garantir a segurança e o controle de acesso em suas propriedades.
+
+Nosso modelo de negócio estava traçado: oferecer um sistema de detecção e reconhecimento de placas que atendesse às necessidades específicas de condomínios de casas em São José dos Campos. Para alcançar esse objetivo, mergulhamos de cabeça no vasto mundo da aprendizagem de máquina, utilizando diferentes bibliotecas e ferramentas para desenvolver nosso modelo.
+
+No entanto, logo nos deparamos com um desafio significativo: nosso conjunto de dados era limitado, contendo apenas algumas centenas de imagens de carros com placas estrangeiras. Para criar um modelo robusto e preciso, precisávamos de mais dados e poder computacional para treinar nosso algoritmo de maneira mais profunda e abrangente.
+
+Optamos por utilizar o modelo pré-treinado Inception-ResNet-v2, uma poderosa rede neural convolucional treinada com milhares de imagens da base de dados ImageNet. Adaptamos esse modelo às nossas necessidades e o treinamos com nosso conjunto de dados, ajustando parâmetros e otimizando o processo de aprendizado.
+
+Apesar de nossos esforços, os resultados preliminares não foram tão promissores quanto esperávamos. Reconhecemos que nossas placas ainda não eram identificadas corretamente, com erros significativos em algumas delas. Percebemos que precisávamos de mais tempo de treinamento e mais dados para melhorar a precisão do nosso modelo.
+
+No entanto, essa primeira iteração do Sentinela nos proporcionou valiosas lições. Compreendemos a importância de aumentar o número de epochs e a quantidade de dados de treinamento para aprimorar nosso modelo. Reconhecemos os desafios que ainda temos pela frente, mas estamos determinados a superá-los e tornar o Sentinela uma solução confiável e eficaz para nossos clientes.
+
+Assim, nossa jornada continua, impulsionada pela paixão pela inovação e pelo desejo de criar um impacto positivo no mundo. Com cada iteração, estamos mais perto de alcançar nosso objetivo e transformar o Sentinela em uma ferramenta indispensável para a segurança e o controle de acesso em condomínios de todo o país.

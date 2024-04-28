@@ -1,0 +1,11 @@
+Pitch de Elevador: O Sentinela
+
+Imagine um mundo onde a segurança é garantida por meio da inovação tecnológica. O Sentinela é mais do que uma solução de reconhecimento de placas veiculares - é uma revolução na maneira como protegemos nossas comunidades.
+
+Criado por um grupo de alunos de Ciências de Dados determinados a fazer a diferença, o Sentinela é um sistema visionário que detecta e reconhece placas veiculares com precisão e eficiência. Nossa jornada começou com um desafio: criar uma solução eficaz com recursos limitados.
+
+Apesar dos obstáculos, transformamos nossas limitações em oportunidades, utilizando a criatividade e a inovação para superar cada desafio que encontramos. Com o modelo pré-treinado Inception-ResNet-v2 como nossa ferramenta principal, enfrentamos cada obstáculo com coragem e determinação.
+
+Os resultados preliminares foram promissores, mas reconhecemos que ainda há trabalho a ser feito. Com cada iteração, estamos mais perto de alcançar nosso objetivo de tornar o Sentinela uma ferramenta indispensável para a segurança e o controle de acesso em condomínios em todo o país.
+
+Junte-se a nós nesta jornada épica de inovação e transformação. O Sentinela está mudando a forma como protegemos nossas comunidades - e você pode fazer parte dessa revolução.
