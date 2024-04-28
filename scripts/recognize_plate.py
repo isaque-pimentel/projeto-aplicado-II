@@ -10,7 +10,7 @@ import pytesseract as pt
 
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 pt.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe" 
-# # Indicates the path the tesseract exe
+# Indicates the path the tesseract exe
 
 # Set directory constants
 file_dir = os.path.dirname(os.path.abspath(__file__))
@@ -32,6 +32,6 @@ def recognize_plate(path, show=False):
 
 # Load test plage image
 test_dir = os.path.join(input_dir, "TEST")
-test_plate_path = os.path.join(test_dir, "TEST_PLATE.jpeg")
+test_plate_path = os.path.join(test_dir, "TEST_PLATE_3.jpeg")
 plate_text = recognize_plate(test_plate_path)
 print(plate_text)
