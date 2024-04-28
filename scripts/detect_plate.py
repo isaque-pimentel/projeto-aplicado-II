@@ -6,6 +6,7 @@ import os
 import tensorflow as tf
 import plotly.express as px
 import cv2
+import pytesseract as pt
 
 from shutil import copy
 from tensorflow.keras.models import Model
@@ -31,7 +32,7 @@ print("Model loaded successfully")
 # Create pipeline
 def detect_plate(path, verbose=False):
     # Read image
-    image = load_img(path) # PIL Object
+    image = load_img(path)  # PIL Object
     image = np.array(image, dtype=np.uint8)
     h, w, d = image.shape
     if verbose:
@@ -40,24 +41,25 @@ def detect_plate(path, verbose=False):
     # Data preprocessing
     load_image = load_img(test_path, target_size=(224, 224))
     load_image_arr = img_to_array(load_image) / 255.0
-    test_arr = load_image_arr.reshape(1,224,224,3)
+    test_arr = load_image_arr.reshape(1, 224, 224, 3)
     if verbose:
         print(f"Tamanho da imagem = {load_image_arr.shape}")
         print(f"Tamanho da imagem TEST (Input) = {test_arr.shape}")
     # Make prediction
     coords = model.predict(test_arr)
     # Denormalize
-    denorm = np.array([w,w,h,h])
+    denorm = np.array([w, w, h, h])
     coords = coords * denorm
     coords = coords.astype(np.int32)
     # Draw bounding on top the image
-    xmin, xmax,ymin,ymax = coords[0]
-    pt1 =(xmin,ymin)
-    pt2 =(xmax,ymax)
+    xmin, xmax, ymin, ymax = coords[0]
+    pt1 = (xmin, ymin)
+    pt2 = (xmax, ymax)
     print(pt1, pt2)
     # Show test image with box
-    cv2.rectangle(image,pt1,pt2,(0,255,0),3)
+    cv2.rectangle(image, pt1, pt2, (0, 255, 0), 3)
     return image, coords
+
 
 # Load test image
 test_path = os.path.join(input_dir, "TEST", "TEST.jpeg")
@@ -65,3 +67,15 @@ image, coords = detect_plate(test_path)
 fig = px.imshow(image)
 fig.update_layout(width=700, height=500, margin=dict(l=10, r=10, b=10, t=10))
 fig.show()
+
+# Save test plate
+img = np.array(load_img(test_path))
+xmin, xmax, ymin, ymax = coords[0]
+plate = img[ymin:ymax, xmin:xmax]
+fig = px.imshow(plate)
+fig.update_layout(width=700, height=500, margin=dict(l=10, r=10, b=10, t=10))
+fig.show()
+
+# OCR using Tesseract
+plate_text = pt.image_to_string(plate)
+print(plate_text)
