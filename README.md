@@ -41,7 +41,7 @@ A apresentação do projeto foi disponibilizada no YouTube. Clique nesse link pa
 
 ### Relatório Técnico do Projeto
 
-Ao final do projeto, um relatório técnico foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação da organização, proposta analítica, análise exploratória de dados e os resultados pretendidos. Clique nesse link para acessar a versão final do relatório.
+Ao final do projeto, um relatório técnico foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação da organização, proposta analítica, análise exploratória de dados e os resultados pretendidos. Clique nesse [link](https://github.com/isaque-pimentel/projeto-aplicado-II/blob/main/Projeto%20Aplicado%20II%20-%20Relat%C3%B3rio%20T%C3%A9cnico.pdf) para acessar a versão final do relatório.
 
 ### Documentação do Projeto
 
