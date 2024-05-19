@@ -39,6 +39,22 @@ As metas do projeto são as ações a serem realizadas pelo modelo. Após o dese
 
 A apresentação do projeto foi disponibilizada no YouTube. Clique nesse link para acessar o vídeo.
 
-### Relatório do Projeto
+### Relatório Técnico do Projeto
 
-Ao final do projeto, um relatório foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação da organização, proposta analítica, análise exploratória de dados e os resultados pretendidos. Clique nesse link para acessar a versão final do relatório.
+Ao final do projeto, um relatório técnico foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação da organização, proposta analítica, análise exploratória de dados e os resultados pretendidos. Clique nesse link para acessar a versão final do relatório.
+
+### Documentação do Projeto
+
+A descrição de cada pasta no repositório é dada a seguir:
+* `dataset`: contém o conjunto de dados (i.e., as etiquetas e as imagens em `annotations` e `images` respectivamente);
+* `intermediate_reports`: contém o conjunto de relatórios intermediários que foram entregues nas etapas do projeto;
+* `object_detection`: contém os históricos do processos de treinamento e validação com a ferramenta TensorBoard;
+* `outputs`: contém diversos resultados intermediários que são salvos nessa pasta (para não ocupar muito espaço do repositório decidimos por não salvar esses dados aqui, apenas localmente);
+* `script`: contém diversos scripts usados durante o processo de aprendizagem:
+    * `parse_annotations.py`: Transforma os diferentes arquivos XML contendo as etiquetas em um único arquivo csv;
+    * `verify_image.py`: Verifica se o quadro da etiqueta está corretamente assinalado para uma determinada imagem;
+    * `read_data.py`: Realiza a leitura e renormalização das imagens em um array numpy tridimensional, assim como a leitura das etiquetas;
+    * `train_model.py`: Realiza o treinamento do modelo usando o Keras e um modelo pré-treinado de Deep Learning chamado **Inception-ResNet-v2**;
+    * `detect_place.py`: Realiza a leitura e renormalização das imagens de TEST para serem processadas pelo modelo, que fará a predição das quatro coordenadas (x_min, x_max, y_min, y_max) identificando a localização das placas;
+    * `recognize_plate.py`: Realiza o processo de reconhecimento de caracteres a partir das placas identificadas usando a ferramenta Tesseract;
+* `story`: contém as diferentes versões de storytelling que foram concebidas para esse projeto; 
