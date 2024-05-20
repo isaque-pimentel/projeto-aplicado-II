@@ -37,7 +37,7 @@ As metas do projeto são as ações a serem realizadas pelo modelo. Após o dese
 
 ### Apresentação do Projeto
 
-A apresentação do projeto foi disponibilizada no YouTube. Clique nesse link para acessar o vídeo.
+A apresentação do projeto foi disponibilizada no YouTube. Clique nesse [link](https://www.youtube.com/watch?v=aALFHSPd3kQ) para acessar o vídeo.
 
 ### Relatório Técnico do Projeto
 
